@@ -14,10 +14,12 @@ class Counter extends React.Component {
   }
 
   componentDidMount() {
+    // IF YOU SEE IT KEEP INCREMENTING/RE-RENDERING YOU SHOULD REMOVE THIS CODE BELOW TO JUST RENDER THE COMPONENT ONCE
     this.timer = this.props.startClock()
   }
 
   componentWillUnmount() {
+    // IF YOU SEE IT KEEP INCREMENTING/RE-RENDERING YOU SHOULD REMOVE THIS CODE BELOW TO JUST RENDER THE COMPONENT ONCE
     clearInterval(this.timer)
   }
 

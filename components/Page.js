@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Typography } from "material-ui";
 import Clock from './Clock'
 import AddCount from './AddCount'
-import withRoot from '../src/withRoot'
+import PageHOC from '../hocs/page'
 
 const PageWrapper = (({ title, lastUpdate }) => {
   return (
@@ -15,4 +15,4 @@ const PageWrapper = (({ title, lastUpdate }) => {
   )
 })
 
-export default connect(state => state)(withRoot(PageWrapper))
+export default connect(state => state)(PageHOC(PageWrapper))

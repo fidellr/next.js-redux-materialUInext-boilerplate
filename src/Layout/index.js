@@ -7,18 +7,15 @@ const Styles = theme => ({
     appFrame: {
         position: 'relative',
         display: 'flex',
-        width: '100%',
-        // height: '100%',
+        width: '100%'
     },
     flex: {
         flex: 1,
     },
     appBar: {
-        position: 'absolute',
+        position: 'fixed',
         marginLeft: '19%',
-        [theme.breakpoints.up('md')]: {
-            width: '19%',
-        },
+        zIndex: 1
     },
     menuButton: {
         marginLeft: -12,
@@ -79,7 +76,7 @@ class Layout extends React.Component {
         const { classes, children } = this.props
         return (
             <div className={classes.appFrame}>
-                <AppBar >
+                <AppBar className={classes.appBar}>
                     <Toolbar>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawer}>
                             <Menu />

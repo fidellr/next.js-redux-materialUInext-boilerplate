@@ -24,7 +24,7 @@ This boilerplate use `create-next-app`, so if you want to install it too, follow
     ```bash
     now
     ```
-
+## If you see it keep re-rendering, see the `/pages/index.js` and `/pages/other.js` comment
 ## The idea behind the example
 
 Usually splitting your app state into `pages` feels natural but sometimes you'll want to have global state for your app. This is an example on how you can use redux that also works with our universal rendering approach. This is just a way you can do it but it's not the only one.
