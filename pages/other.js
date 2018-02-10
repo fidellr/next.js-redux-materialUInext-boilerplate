@@ -3,8 +3,6 @@ import { bindActionCreators } from 'redux'
 import { initStore, startClock, addCount, serverRenderClock } from '../store'
 import withRedux from 'next-redux-wrapper'
 import Page from '../components/Page'
-import Layout from '../src/Layout'
-import withRoot from '../src/withRoot'
 
 class Counter extends React.Component {
   static getInitialProps({ store, isServer }) {
@@ -23,9 +21,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Page title='Other Page' />
-      </Layout>
+      <Page title='Other Page' />
     )
   }
 }
@@ -37,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default withRedux(initStore, null, mapDispatchToProps)(withRoot(Counter))
+export default withRedux(initStore, null, mapDispatchToProps)(Counter)

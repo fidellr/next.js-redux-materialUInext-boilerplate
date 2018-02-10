@@ -1,14 +1,18 @@
 import Link from 'next/link'
 import { connect } from 'react-redux'
+import { Typography } from "material-ui";
 import Clock from './Clock'
 import AddCount from './AddCount'
+import withRoot from '../src/withRoot'
 
-export default connect(state => state)(({ title, lastUpdate }) => {
+const PageWrapper = (({ title, lastUpdate }) => {
   return (
     <div>
-      <h1>{title}</h1>
+      <Typography variant="display1">{title}</Typography>
       <Clock lastUpdate={lastUpdate} />
       <AddCount />
     </div>
   )
 })
+
+export default connect(state => state)(withRoot(PageWrapper))

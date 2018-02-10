@@ -222,8 +222,10 @@ var pad = function pad(n) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Clock__ = __webpack_require__("./components/Clock.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__AddCount__ = __webpack_require__("./components/AddCount.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui__ = __webpack_require__("./node_modules/material-ui/index.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Clock__ = __webpack_require__("./components/Clock.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__AddCount__ = __webpack_require__("./components/AddCount.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_withRoot__ = __webpack_require__("./src/withRoot.js");
 var _jsxFileName = '/home/fidel/Documents/ssr/with-redux-app/components/Page.js';
 
 
@@ -238,9 +240,9 @@ var _jsxFileName = '/home/fidel/Documents/ssr/with-redux-app/components/Page.js'
 
 
 
-var _default = Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(function (state) {
-  return state;
-})(function (_ref) {
+
+
+var PageWrapper = function PageWrapper(_ref) {
   var title = _ref.title,
       lastUpdate = _ref.lastUpdate;
 
@@ -249,32 +251,35 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(func
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 10
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h1',
-      {
-        __source: {
+      __WEBPACK_IMPORTED_MODULE_3_material_ui__["j" /* Typography */],
+      { variant: 'display1', __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 11
         }
       },
       title
     ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Clock__["a" /* default */], { lastUpdate: lastUpdate, __source: {
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Clock__["a" /* default */], { lastUpdate: lastUpdate, __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 12
       }
     }),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__AddCount__["a" /* default */], {
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__AddCount__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 13
       }
     })
   );
-});
+};
+
+var _default = Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(function (state) {
+  return state;
+})(Object(__WEBPACK_IMPORTED_MODULE_6__src_withRoot__["a" /* default */])(PageWrapper));
 
 /* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
@@ -288,6 +293,7 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(func
     return;
   }
 
+  reactHotLoader.register(PageWrapper, 'PageWrapper', '/home/fidel/Documents/ssr/with-redux-app/components/Page.js');
   reactHotLoader.register(_default, 'default', '/home/fidel/Documents/ssr/with-redux-app/components/Page.js');
   leaveModule(module);
 })();
@@ -98755,9 +98761,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__("./store.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_redux_wrapper__ = __webpack_require__("./node_modules/next-redux-wrapper/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_redux_wrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_redux_wrapper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_Layout__ = __webpack_require__("./src/Layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Page__ = __webpack_require__("./components/Page.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_withRoot__ = __webpack_require__("./src/withRoot.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Page__ = __webpack_require__("./components/Page.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_withRoot__ = __webpack_require__("./src/withRoot.js");
 var _jsxFileName = '/home/fidel/Documents/ssr/with-redux-app/pages/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -98773,7 +98778,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -98804,20 +98808,11 @@ var Counter = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_4__src_Layout__["a" /* default */],
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 27
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Page__["a" /* default */], { title: 'Index Page', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 28
-          }
-        })
-      );
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Page__["a" /* default */], { title: 'Index Page', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        }
+      });
     }
   }, {
     key: '__reactstandin__regenerateByEval',
@@ -98847,7 +98842,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-var _default = __WEBPACK_IMPORTED_MODULE_3_next_redux_wrapper___default()(__WEBPACK_IMPORTED_MODULE_2__store__["b" /* initStore */], null, mapDispatchToProps)(Object(__WEBPACK_IMPORTED_MODULE_6__src_withRoot__["a" /* default */])(Counter));
+var _default = __WEBPACK_IMPORTED_MODULE_3_next_redux_wrapper___default()(__WEBPACK_IMPORTED_MODULE_2__store__["b" /* initStore */], null, mapDispatchToProps)(Counter);
 
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
@@ -98979,11 +98974,11 @@ var Styles = function Styles(theme) {
         }, _defineProperty(_content, theme.breakpoints.up('md'), {
             margin: '9.2ch 36ch'
         }), _defineProperty(_content, theme.breakpoints.down('md'), {
-            margin: '9.2ch 36ch'
+            margin: '8ch 36ch'
         }), _defineProperty(_content, theme.breakpoints.down('sm'), {
-            margin: '10ch 3ch'
+            margin: '8ch 3ch'
         }), _defineProperty(_content, theme.breakpoints.down('xs'), {
-            margin: '9ch 3ch'
+            margin: '7ch 3ch'
         }), _content)
     };
 };
@@ -99425,6 +99420,7 @@ function getPageContext() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Reboot__ = __webpack_require__("./node_modules/material-ui/Reboot/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Reboot___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_Reboot__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getPageContext__ = __webpack_require__("./src/getPageContext.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Layout__ = __webpack_require__("./src/Layout/index.js");
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = '/home/fidel/Documents/ssr/with-redux-app/src/withRoot.js';
@@ -99442,6 +99438,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -99492,21 +99489,30 @@ function withRoot(Component) {
             sheetsManager: this.pageContext.sheetsManager,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 27
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_Reboot___default.a, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Component, _extends({}, this.props, {
-            __source: {
-              fileName: _jsxFileName,
               lineNumber: 32
             }
-          }))
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_5__Layout__["a" /* default */],
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 33
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Component, _extends({}, this.props, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
+              }
+            }))
+          )
         );
       }
     }, {

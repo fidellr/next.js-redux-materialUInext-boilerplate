@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider } from 'material-ui/styles';
 import Reboot from 'material-ui/Reboot';
 import getPageContext from './getPageContext';
+import Layout from './Layout'
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -29,7 +30,9 @@ function withRoot(Component) {
         >
           {/* Reboot kickstart an elegant, consistent, and simple baseline to build upon. */}
           <Reboot />
-          <Component {...this.props} />
+          <Layout>
+            <Component {...this.props} />
+          </Layout>
         </MuiThemeProvider>
       );
     }

@@ -2,7 +2,6 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { initStore, startClock, addCount, serverRenderClock } from '../store'
 import withRedux from 'next-redux-wrapper'
-import Layout from '../src/Layout'
 import Page from '../components/Page'
 import withRoot from '../src/withRoot';
 
@@ -24,9 +23,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Page title='Index Page'/>
-      </Layout>
+      <Page title='Index Page' />
     )
   }
 }
@@ -38,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default withRedux(initStore, null, mapDispatchToProps)(withRoot(Counter))
+export default withRedux(initStore, null, mapDispatchToProps)(Counter)

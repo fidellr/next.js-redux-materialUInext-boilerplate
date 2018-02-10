@@ -59,13 +59,13 @@ const Styles = theme => ({
             margin: '9.2ch 36ch'
         },
         [theme.breakpoints.down('md')]: {
-            margin: '9.2ch 36ch'
+            margin: '8ch 36ch'
         },
         [theme.breakpoints.down('sm')]: {
-            margin: '10ch 3ch'
+            margin: '8ch 3ch'
         },
         [theme.breakpoints.down('xs')]: {
-            margin: '9ch 3ch'
+            margin: '7ch 3ch'
         }
     },
 })
