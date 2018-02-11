@@ -2,6 +2,8 @@ import { Drawer, Hidden, List, Typography, ListItem, Divider, Avatar } from "mat
 import Link from 'next/link'
 import { withStyles } from "material-ui/styles";
 import deepOrange from 'material-ui/colors/deepOrange';
+import Icon from 'material-ui/Icon';
+import { Home } from 'material-ui-icons'
 
 
 const Styles = theme => ({
@@ -20,13 +22,20 @@ const Styles = theme => ({
         color: '#fff',
         backgroundColor: deepOrange[500]
     },
+    icon: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'space-around',
+        marginRight: '15%'
+      },
 
 })
 
 const Routes = [
     {
         path: '/',
-        name: 'Home'
+        name: 'Home',
+        icon: <Home/>
     },
     {
         path: '/other',
@@ -43,6 +52,11 @@ const DrawerList = ({ classes }) => (
                 Routes.map(route => (
                     <Link href={route.path} key={route.name}>
                         <ListItem button>
+                        <div className={classes.icon}>
+                            <Icon>
+                                {route.icon}
+                            </Icon>
+                        </div>
                             <Typography variant="subheading">{route.name}</Typography>
                         </ListItem>
                     </Link>
