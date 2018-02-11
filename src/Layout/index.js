@@ -53,16 +53,16 @@ const Styles = theme => ({
         width: '100%',
         height: 'calc(100% - 56px)',
         [theme.breakpoints.up('md')]: {
-            margin: '9.2ch 36ch'
+            margin: '11ch 36ch'
         },
         [theme.breakpoints.down('md')]: {
-            margin: '8ch 36ch'
+            margin: '11ch 36ch'
         },
         [theme.breakpoints.down('sm')]: {
-            margin: '8ch 3ch'
+            margin: '10ch 3ch'
         },
         [theme.breakpoints.down('xs')]: {
-            margin: '7ch 3ch'
+            margin: '9ch 3ch'
         }
     },
 })
